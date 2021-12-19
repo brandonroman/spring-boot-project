@@ -20,4 +20,14 @@ public class MyConfigurationBean {
     public MyBeanWithDependency beanOperationOperationWithDependency(MyOperation myOperation) {
         return new MyBeanWithDependencyImplement(myOperation);
     }
+
+    @Bean
+    public NumberCube beanNumberCube() {
+        return new NumberCubeImplement();
+    }
+
+    @Bean
+    public CubeResult beanCubeResult (NumberCube numberCube) {
+        return new CubeResultImplement(numberCube);
+    }
 }
